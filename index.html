@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>formulaire d'inscription</title>
+        <link rel="shortcut icon" href="img/m_mini.png" type="image/png">
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <div id="feuill">
+            <h1>Bienvenue sur votre site !</h1>
+            <br>
+        </div>
+            <br>
+            <br>
+        <div id="form-container">
+            <form action="dashboard.html" id="login-form">
+                <h2>Connexion</h2>
+                <div class="input-group">
+                    <label for="username">Identifiant</label>
+                    <input type="text" id="username" name="username" minlength="5" placeholder="Ex: AdminChorale" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="pass">Mot de passe</label>
+                    <input type="password" id="pass" name="password" minlength="8" placeholder="8 caractères minimum" required autocomplete="current-password" >
+                </div>
+
+                <button type="submit" id="submit-btn">Se connecter</button>
+            </form>
+        </div>
+        <script>
+        document.getElementById('login-form').onsubmit = function(e) {
+            var mdp = document.getElementById('pass').value;
+            var user = document.getElementById('username').value;
+
+            if (user === "admin" && mdp === "8 caractères") {
+                // Laisse le formulaire s'envoyer vers dashboard.html
+                return true;
+            } else {
+                alert("Identifiant ou mot de passe incorrect !");
+                e.preventDefault(); // Bloque l'envoi du formulaire
+                return false;
+            }
+        };
+        </script>
+    </body>
+</html>
