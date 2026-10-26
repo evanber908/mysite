@@ -660,3 +660,13 @@ button {
     color: #bbb;
     margin-top: 4px;
 }
+
+/* =========================================
+   11. MODE MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+
+    .bloc-agenda {
+        display: none;
+    }
+}
